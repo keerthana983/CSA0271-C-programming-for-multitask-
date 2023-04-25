@@ -1,0 +1,14 @@
+num_lines = int(input("Number of lines: ")) # get the input from the user
+
+# iterate through each line
+for i in range(1, num_lines + 1):
+    # print the numbers for the current line
+    for j in range(i):
+        # print the number followed by a space
+        print(i, end=' ')
+        # if this is the last number in the line, print a newline instead of a space
+        if j == i - 1:
+            print()
+        # if this is not the last number in the line and it's not the first number, print a space followed by a padding space
+        elif j != 0:
+            print(' ', end='')
