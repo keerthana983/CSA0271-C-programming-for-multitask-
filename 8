@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int P, Q, R;
+    printf("Enter the value of P: ");
+    scanf("%d", &P);
+    printf("Enter the value of Q: ");
+    scanf("%d", &Q);
+    printf("Enter the value of R: ");
+    scanf("%d", &R);
+
+    printf("Numbers are = ");
+    for (int i = P; i <= Q; i++) {
+        int num = i;
+        while (num != 0) {
+            if (num % 10 == R) {
+                // skip this number
+                goto skip;
+            }
+            num /= 10;
+        }
+        printf("%d, ", i);
+        skip: continue;
+    }
+
+    return 0;
+}
