@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int num, rev = 0, digit;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    int temp = num;
+    while(temp > 0) {
+        digit = temp % 10;
+        rev = rev * 10 + digit;
+        temp /= 10;
+    }
+    int lastDigit = rev % 10;
+    rev /= 10;
+    rev = lastDigit * pow(10, (int)log10(num)) + rev;
+    
+    printf("Original Number: %d\n", num);
+    printf("Reverse Number: %d", rev);
+    return 0;
+}
