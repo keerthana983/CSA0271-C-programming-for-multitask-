@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int x, n, choice;
+    printf("Enter the value of x: ");
+    scanf("%d", &x);
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+
+    printf("Choose an arithmetic operation:\n");
+    printf("1. Pow(x,n)\n");
+    printf("2. Add(x,n)\n");
+    printf("3. Sub(x,n)\n");
+    printf("4. Mul(x,n)\n");
+    printf("5. Div(x,n)\n");
+    printf("Enter your choice (1-5): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Pow(%d,%d) = %lf\n", x, n, pow(x, n));
+            break;
+        case 2:
+            printf("Add(%d,%d) = %d\n", x, n, x + n);
+            break;
+        case 3:
+            printf("Sub(%d,%d) = %d\n", x, n, x - n);
+            break;
+        case 4:
+            printf("Mul(%d,%d) = %d\n", x, n, x * n);
+            break;
+        case 5:
+            if (n == 0) {
+                printf("Cannot divide by zero\n");
+            } else {
+                printf("Div(%d,%d) = %d\n", x, n, x / n);
+            }
+            break;
+        default:
+            printf("Invalid choice\n");
+            break;
+    }
+
+    return 0;
+}
